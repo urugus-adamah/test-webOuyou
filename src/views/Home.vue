@@ -1,18 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <input type="text" v-model="word">
+    <input type="submit" @click="send">
+    <p>{{text}}</p>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import axios from "axios";
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+  data(){
+    return {
+      word:"",
+      text:"",
+    };
+  },
+  methods :{  
+    send(){
+      axios
+        .post("https://gentle-peak-42861.herokuapp.com/api",{
+          id:1,
+          data:this.word,
+        })
+        .then((response)=>{
+          console.log(response);
+          this.text="testtest";
+        });
+    }
+  } 
+};
 </script>
