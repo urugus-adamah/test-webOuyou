@@ -19,7 +19,7 @@ export default {
     send(){
       console.log("enter_send");
       axios
-        .post("https://gentle-peak-42861.herokuapp.com/api/",{
+        .post("https://gentle-peak-42861.herokuapp.com/api",{
           id:1,
           data:this.word,
         })
@@ -27,6 +27,7 @@ export default {
           console.log(response);
           this.text="testtest";
         });
+        console.log("out_send");
     }
   } 
 };
