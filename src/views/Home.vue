@@ -20,12 +20,11 @@ export default {
       console.log("enter_send");
       axios
         .post("https://gentle-peak-42861.herokuapp.com/api",{
-          id:1,
           data:this.word,
         })
         .then((response)=>{
-          console.log(response);
-          this.text="testtest";
+          // console.log(response);
+          this.text=response.data.data;
         });
         console.log("out_send");
     }
