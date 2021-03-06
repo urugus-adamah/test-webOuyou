@@ -32,3 +32,10 @@ export default {
   } 
 };
 </script>
+<style scoped>
+  p{
+    margin: 20px 10px;
+    font-weight: bold;
+    color: blue;
+  }
+</style>
